@@ -70,8 +70,29 @@ async function getToken(){
   tokenPending=(async()=>{
     const r=await fetch('https://www.wixapis.com/oauth2/token',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({grant_type:'client_credentials',client_id:CLIENT_ID,client_secret:CLIENT_SECRET}),signal:AbortSignal.timeout(12000)});
     if(!r.ok)throw error('Wix authorization unavailable',502);
-    const body=await r.json();
-    if(!body.access_token)throw error('Wix authorization unavailable',502);
+    const body=await r.json();    
+if (!r.ok) {
+  let oauthCode = 'unknown';
+  try {
+    const response = await r.json();
+    const allowed = new Set([
+      'invalid_client',
+      'invalid_grant',
+      'invalid_request',
+      'unauthorized_client',
+      'unsupported_grant_type',
+      'temporarily_unavailable'
+    ]);
+    if (allowed.has(response?.error)) {
+      oauthCode = response.error;
+    }
+  } catch {}
+
+  console.error(
+    `GC Wix OAuth failed: HTTP ${r.status}; code=${oauthCode}`
+  );
+  throw error('Wix authorization unavailable', 502);
+}
     token=body.access_token;expiry=Date.now()+(Number(body.expires_in)||3600)*1000;return token;
   })();
   try{return await tokenPending;}finally{tokenPending=null;}
