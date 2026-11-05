@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>GC | Ground Bangkok — Space Rental</title>
+  <style>
+:root{--bg:#080909;--surface:#0d0e0e;--surface2:#141616;--line:#482021;--line2:#802b2c;--red:#ed4743;--red-bright:#ff5b54;--ink:#e6e3e0;--muted:#96918e;--green:#8ac7ac;--warn:#f0b57a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif;background-image:linear-gradient(to right,rgba(142,35,33,.045) 1px,transparent 1px),linear-gradient(to bottom,rgba(142,35,33,.045) 1px,transparent 1px);background-size:52px 52px}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}a{color:var(--red-bright);text-decoration:none}.shell{width:min(1260px,calc(100% - 48px));margin:0 auto}.masthead{min-height:86px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line2);gap:12px}.brand{display:flex;align-items:center;gap:20px}.mark{font:800 27px/1 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-2px;color:var(--red)}.mark span{color:#66504b}.brand-title{font-size:12px;font-weight:750;letter-spacing:.18em}.brand-sub,.muted,.small{color:var(--muted);font-size:11px;letter-spacing:.055em}.brand-sub{margin-top:3px}.top-right{display:flex;gap:22px;align-items:center}.system-indicator{border:1px solid #70413f;padding:6px 10px;font:11px ui-monospace,Consolas,monospace;color:var(--muted);white-space:nowrap}.system-indicator i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#c78958;margin-right:7px}.system-indicator.on{color:var(--green);border-color:#345449}.system-indicator.on i{background:var(--green)}.system-indicator.off{color:#f19688}.system-indicator.off i{background:#f19688}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.screen-label{padding:14px 0 5px;display:flex;justify-content:space-between;color:var(--red);font:10px ui-monospace,monospace;letter-spacing:.11em}.intro{padding:45px 0 36px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px}.eyebrow,.overline,.tiny-label{font:11px ui-monospace,monospace;letter-spacing:.12em;color:var(--red)}h1{font-weight:600;line-height:1.08;font-size:clamp(32px,4.5vw,54px);letter-spacing:-.052em;margin:14px 0 16px}h1 em{font-style:normal;color:var(--red)}.description{max-width:620px;color:var(--muted);line-height:1.7;margin:0}.build-id{text-align:right;color:#8e5652;font:11px/1.9 ui-monospace,monospace;white-space:nowrap}.twocol{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{border:1px solid var(--line);background:linear-gradient(155deg,rgba(30,15,15,.45),rgba(10,10,10,.96) 48%);padding:23px}.panel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:17px}.panel h2{font-size:21px;margin:5px 0 0;font-weight:600;letter-spacing:-.028em}.subtle{font-size:12px;line-height:1.65;color:var(--muted)}.plan-wrapper{margin:25px 0 18px}.plan-top-dim{text-align:center;color:#a85350;font:11px ui-monospace,monospace;margin-bottom:12px;letter-spacing:.08em}.plan-and-axis{display:flex;align-items:center;gap:12px}.plan-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,112px);width:100%;border:2px solid var(--red);background:#130b0b;box-shadow:0 0 35px #e5353510}.zone{position:relative;min-width:0;border:1px solid #7b292b;background:transparent;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:1;transition:background .17s,border-color .17s}.zone strong{font:700 19px ui-monospace,monospace;letter-spacing:.09em}.zone small{font:9px ui-monospace,monospace;letter-spacing:.04em;color:#966e6c}.zone:hover,.zone:focus-visible{background:#2b1213;outline:1px solid var(--red-bright);outline-offset:-3px}.zone[aria-pressed="true"]{background:rgba(237,71,67,.22);box-shadow:inset 0 0 24px rgba(227,59,51,.18);border:1px solid #ff6860}.zone[aria-pressed="true"] strong{color:#ff8076}.beamline{position:absolute;pointer-events:none;left:0;right:0;top:50%;border-top:2px dashed #ec555383;z-index:2}.plan-side-dim{writing-mode:vertical-rl;text-align:center;font:11px ui-monospace,monospace;color:#a85350}.plan-foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:10px;font:10px ui-monospace,monospace;color:#8d6563}.selected-zone{color:var(--red)}.notice{border-top:1px solid var(--line);padding-top:14px;color:#ac9693;font-size:12px;line-height:1.65}.red-dot{display:inline-block;width:6px;height:6px;margin-right:7px;background:var(--red);vertical-align:middle}.field-label{display:block;font-size:12px;color:#c9c3c0;margin:12px 0}.pills{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 17px}.pill{background:#141414;border:1px solid #573334;color:#b7aaa8;border-radius:100px;padding:7px 12px;transition:all .15s}.pill:hover{color:#fff;border-color:var(--red)}.pill.active{color:#fff;background:#b03534;border-color:var(--red);box-shadow:0 0 12px rgba(231,42,46,.19)}.fields-grid,.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.form-field{display:flex;flex-direction:column;gap:7px;min-width:0;margin-bottom:16px}.form-field>span{color:#bfb7b4;font-size:12px}.form-field b,.check-line b{color:var(--red)}.form-field input,.form-field textarea,.form-field select,.end-display{background:#080909;border:1px solid #583333;border-radius:0;color:var(--ink);padding:11px 12px;min-height:42px;width:100%;outline:none}.form-field input:focus,.form-field textarea:focus,.form-field select:focus{border-color:var(--red);box-shadow:0 0 0 2px #ef49421b}.form-field input::placeholder,.form-field textarea::placeholder{color:#665d5d}.form-field select option{background:#111}.form-field textarea{resize:vertical}.readout{min-height:42px;display:flex;align-items:center;padding-left:6px;font:18px ui-monospace,monospace}.rate-basis{display:grid;grid-template-columns:1fr auto;gap:8px 10px;margin:0 0 16px;border-block:1px solid var(--line);padding:13px 0;color:#866b69;font:10px ui-monospace,monospace}.rate-basis strong{font-size:12px;color:#cac0bc;font-weight:500}.receipt{font-size:13px}.receipt>div{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:8px 0;color:#b6aaa7}.receipt strong{font-weight:500;color:#f0ebe9;font-family:ui-monospace,Consolas,monospace;font-variant-numeric:tabular-nums;white-space:nowrap}.receipt .total{border-top:1px solid var(--line2);margin-top:10px;padding-top:17px;font-size:15px;color:#fff;font-weight:650}.receipt .total strong{font-size:24px;color:#fff;font-weight:750}.receipt .difference{font-size:11px;color:#9b7773}.receipt .difference strong{color:#c19b98}.print-subtle{margin-top:15px}.submit-panel{margin-top:16px}.form-section-title{font:11px ui-monospace,monospace;letter-spacing:.11em;color:var(--red);border-bottom:1px solid var(--line);padding:10px 0;margin:12px 0 17px}.end-display{color:#baa9a6;display:flex;align-items:center}.check-line{display:flex;gap:12px;align-items:flex-start;color:#beb0ac;font-size:12px;line-height:1.7;margin:7px 0 27px}.check-line input{accent-color:var(--red);width:17px;height:17px;flex-shrink:0;margin-top:2px}.submit-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;border-top:1px solid var(--line);padding-top:22px}.pathway{margin-top:8px;font:11px ui-monospace,monospace;color:#b9aaaa}.pathway span{color:var(--red)}.action{background:transparent;border:1px solid var(--red);color:#ffb3ad;padding:13px 17px;font:700 12px ui-monospace,monospace;letter-spacing:.04em;transition:background .15s;white-space:nowrap}.action:hover{background:#642425;color:#fff}.action.primary{background:#bb3534;color:#fff}.action.primary:hover{background:#e3443e}.action.ghost{border-color:#755251;color:#bfb0ac}.action:focus-visible{outline:2px solid #fff;outline-offset:2px}.feedback{margin-top:17px;padding:17px;border:1px solid var(--line2);background:#1f1111;color:#f6c9c5;white-space:pre-line}.feedback.good{background:#0e1b17;color:#b1e5c9;border-color:#35614e}.honeypot{position:absolute;left:-10000px;opacity:0;height:0;width:0;pointer-events:none}.footer{border-top:1px solid var(--line);display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;margin:30px 0 15px;padding:16px 0;color:#745858;font:10px ui-monospace,monospace}.internal-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(290px,.8fr);gap:16px}.statbar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:15px}.stat{border:1px solid var(--line);background:#130d0d;padding:14px}.stat span{display:block;font:10px ui-monospace,monospace;color:#a87e79;letter-spacing:.06em}.stat strong{display:block;margin-top:8px;font:24px ui-monospace,monospace;color:#f6e9e7;overflow-wrap:anywhere}.admin-table-wrap{overflow:auto;max-width:100%}.admin-table{border-collapse:collapse;width:100%;min-width:650px;text-align:left;font-size:12px}.admin-table th{font:10px ui-monospace,monospace;color:#be9692;letter-spacing:.04em;border-bottom:1px solid var(--line2);padding:9px 9px}.admin-table td{padding:11px 9px;border-bottom:1px solid var(--line);color:#cbbdb9}.admin-table tr.record{cursor:pointer}.admin-table tr.record:hover{background:#2d1414}.admin-table tr.record:focus-visible{outline:2px solid var(--red)}.status-tag{display:inline-block;border:1px solid #75403e;color:#efafa8;padding:3px 5px;font:10px ui-monospace,monospace}.status-tag.APPROVED{color:var(--green);border-color:#35684c}.status-tag.DECLINED{color:#999;border-color:#555}.panel-scroll{max-height:570px;overflow:auto}.toolrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:10px 0 18px}.toolrow select,.toolrow input{background:#0a0a0a;color:#ddd;border:1px solid var(--line2);padding:10px 8px;min-width:90px}.detail-kv{display:grid;grid-template-columns:125px 1fr;gap:6px 15px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}.detail-kv span{color:#9f7976}.detail-kv strong{color:#efe7e5;font-weight:500;overflow-wrap:anywhere;white-space:pre-line}.gap-top{margin-top:17px}.auth-panel{max-width:540px;margin:50px auto 80px}.inline-form{display:flex;gap:9px}.inline-form input{flex:1;min-width:0;background:#080909;color:#fff;border:1px solid var(--line2);padding:12px}.locked{color:var(--muted);font-size:12px}.setting-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.setting-grid .form-field input{min-width:0}.hidden{display:none!important}.empty{padding:26px 0;color:#aa8f89}.internal-link{color:#aa6964;font:10px ui-monospace,monospace}.admin-notes{width:100%;resize:vertical;min-height:86px;background:#0b0b0b;border:1px solid var(--line2);color:#ddd;padding:10px}.admin-help{font-size:11px;color:#a68a85;line-height:1.6}.break-any{overflow-wrap:anywhere}@media(max-width:900px){.twocol,.internal-layout{grid-template-columns:1fr}.plan-grid{grid-template-rows:repeat(2,135px)}.statbar{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.shell{width:min(100% - 24px,1260px)}.masthead{min-height:76px}.brand{gap:10px}.brand-title{font-size:10px}.brand-sub{font-size:9px}.top-right .muted{display:none}.intro{padding:23px 0;display:block}.build-id{display:none}.panel{padding:16px}.form-row,.fields-grid{grid-template-columns:1fr}.receipt .total strong{font-size:21px}.zone strong{font-size:15px}.zone small{font-size:7px}.plan-grid{grid-template-rows:repeat(2,90px)}.submit-foot{align-items:stretch;flex-direction:column}.action.primary{width:100%}.screen-label{font-size:8px}.screen-label span:last-child{display:none}.setting-grid{grid-template-columns:1fr}.statbar{grid-template-columns:repeat(2,1fr)}}@media print{body{background:#fff;color:#111}.panel,.stat{background:#fff;color:#111;border-color:#ddd}.masthead{border-color:#333}.footer,.build-id,.action,.system-indicator{display:none}h1 em{color:#111}.zone{color:#111;border-color:#666}.plan-grid{border-color:#333}.receipt strong,.rate-basis strong{color:#111}}
+
+.admin-plan{margin:12px 0 17px}.admin-plan .plan-grid{grid-template-rows:repeat(2,55px)}.admin-plan .zone{pointer-events:none}.admin-plan .zone strong{font-size:12px}.admin-plan .zone[data-admin-zone="RECEPTION"] strong,.admin-plan .zone[data-admin-zone="CAFE"] strong{font-size:10px}
+
+
+/* Navigation connecting this embedded GC client to the published Wix page. */
+.site-links{display:flex;align-items:center;gap:15px;flex-wrap:wrap}
+.site-links a{font:10px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.05em;color:#f7b3ad;border-bottom:1px solid #984341;padding:3px 0;white-space:nowrap}
+.site-links a:hover,.site-links a:focus-visible{color:#fff;border-color:#ff645b}
+.site-links a[hidden]{display:none!important}
+@media(max-width:700px){.site-links{gap:7px;flex-direction:column;align-items:flex-end}.site-links a{font-size:9px}.system-indicator{font-size:9px;padding:4px}.masthead{align-items:flex-start;padding:17px 0}}
+</style>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <div class="brand"><div class="mark">GC<span> / </span>RCL</div><div><div class="brand-title">GROUND BANGKOK</div><div class="brand-sub">SPACE RENTAL / CLIENT SUBMISSION</div></div></div>
+      <div class="top-right"><nav class="site-links" aria-label="Site navigation"><a id="fullRentalLink" href="https://www.groundbangkok.com/" target="_blank" rel="noopener noreferrer" hidden>OPEN FULL RENTAL PAGE ↗</a><a href="https://www.groundbangkok.com/" target="_blank" rel="noopener noreferrer">GROUND BANGKOK ↗</a></nav><span class="system-indicator" id="serverState"><i></i> CONNECTING</span><span class="muted mono">GC / UNIT 01</span></div>
+    </header>
+    <div class="screen-label"><span>01 / RENTAL PARAMETERS</span><span>RATES DERIVED FROM 7-DAY BASE</span></div>
+    <main>
+      <section class="intro"><div><p class="eyebrow">GC / RENTAL INTERFACE · BANGKOK ICT (UTC+7)</p><h1>Operate the space.<br><em>Submit a rental request.</em></h1><p class="description">Select the rental period and floorplan zones. The system calculates an indicative cost, then records the client's application for internal GC review.</p></div><div class="build-id">[ GC / 2026 ]<br>CLIENT → REVIEW → QUOTATION</div></section>
+      <div class="twocol">
+        <section class="panel" aria-labelledby="floorTitle">
+          <div class="panel-top"><div><span class="overline">02 / AREA SELECTION</span><h2 id="floorTitle">Warehouse floorplan</h2></div><span class="small mono">29.70 M × 14.60 M</span></div>
+          <p class="subtle">Select one or more zones. Schematic traced from the supplied floorplan; measurements and permitted use must be confirmed by the operator.</p>
+          <div class="plan-wrapper">
+            <div class="plan-top-dim">← 29.70 m →</div>
+            <div class="plan-and-axis"><div class="plan-grid" id="floorGrid">
+              <button type="button" class="zone" data-zone="CAFE" aria-pressed="false"><strong>CAFE</strong><small>FRONT / NORTH</small></button>
+              <button type="button" class="zone" data-zone="E" aria-pressed="false"><strong>E</strong><small>UPPER BAY</small></button>
+              <button type="button" class="zone" data-zone="C" aria-pressed="false"><strong>C</strong><small>UPPER BAY</small></button>
+              <button type="button" class="zone" data-zone="A" aria-pressed="false"><strong>A</strong><small>UPPER BAY</small></button>
+              <button type="button" class="zone" data-zone="RECEPTION" aria-pressed="false"><strong>RECEPTION</strong><small>ENTRY / SOUTH</small></button>
+              <button type="button" class="zone" data-zone="F" aria-pressed="false"><strong>F</strong><small>LOWER BAY</small></button>
+              <button type="button" class="zone" data-zone="D" aria-pressed="false"><strong>D</strong><small>LOWER BAY</small></button>
+              <button type="button" class="zone" data-zone="B" aria-pressed="false"><strong>B</strong><small>LOWER BAY</small></button>
+              <div class="beamline" aria-hidden="true"></div>
+            </div><div class="plan-side-dim">14.60 m</div></div>
+            <div class="plan-foot"><span>▱ SCHEMATIC VIEW / NOT A SURVEY</span><span class="selected-zone" id="selectedZoneText">NO ZONES SELECTED</span></div>
+          </div>
+          <div class="notice"><span class="red-dot"></span> Base rental price is not automatically multiplied by the number of zones. GC will confirm the actual area, permitted access and final quotation.</div>
+        </section>
+        <section class="panel" aria-labelledby="calTitle">
+          <div class="panel-top"><div><span class="overline">03 / RATE ENGINE</span><h2 id="calTitle">Rental calculation</h2></div><span class="small mono">THB / VAT 7%</span></div>
+          <label class="field-label" for="durationHours">Select rental period</label>
+          <div class="pills" role="group" aria-label="Rental period"><button class="pill active" type="button" data-hours="1">1 hour</button><button class="pill" type="button" data-hours="24">1 day</button><button class="pill" type="button" data-hours="168">7 days</button><button class="pill" type="button" data-hours="720">1 month</button><button class="pill" type="button" data-hours="8760">1 year</button></div>
+          <div class="fields-grid"><label class="form-field"><span>Duration (hours) <b>*</b></span><input type="number" min="1" max="8760" step="1" id="durationHours" value="1" required></label><div class="form-field"><span>Duration (days)</span><output class="readout" id="daysOut">0.04</output></div></div>
+          <div class="rate-basis"><span>7-DAY BASE RENTAL</span><strong id="basisOut">฿35,000.00</strong><span>HOURLY DERIVATION</span><strong id="perHourOut">฿208.33</strong></div>
+          <div class="receipt" aria-live="polite"><div><span>Rental</span><strong id="rentalOut">฿208.33</strong></div><div><span>Installation/removal (once)</span><strong id="setupOut">฿10,000.00</strong></div><div><span>VAT (<span id="vatPctOut">7</span>%)</span><strong id="vatOut">฿714.58</strong></div><div class="total"><span>Estimated grand total</span><strong id="totalOut">฿10,922.92</strong></div><div class="difference"><span>Difference against 7-day base total</span><strong id="differenceOut">−฿37,227.08</strong></div></div>
+          <p class="subtle print-subtle">1 month = 30 days; 1 year = 365 days. These are estimated charges, not a confirmed reservation or invoice.</p>
+        </section>
+      </div>
+      <section class="panel submit-panel" aria-labelledby="submitTitle"><div class="panel-top"><div><span class="overline">04 / SUBMISSION REQUIREMENTS</span><h2 id="submitTitle">Client rental application</h2></div><span class="small mono">* REQUIRED</span></div>
+        <form id="rentalForm" novalidate>
+          <div class="form-section-title">A / CLIENT IDENTIFICATION</div>
+          <div class="form-row"><label class="form-field"><span>Full name / responsible person <b>*</b></span><input name="applicant_name" required minlength="2" maxlength="140" autocomplete="name" placeholder="Client full name"></label><label class="form-field"><span>Organization</span><input name="organization" maxlength="140" autocomplete="organization" placeholder="Company / group (optional)"></label></div>
+          <div class="form-row"><label class="form-field"><span>Email address <b>*</b></span><input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="contact@example.com"></label><label class="form-field"><span>Telephone <b>*</b></span><input name="phone" type="tel" required maxlength="60" autocomplete="tel" placeholder="+66 ..."></label></div>
+          <div class="form-section-title">B / RENTAL SCHEDULE</div>
+          <div class="form-row"><label class="form-field"><span>Start date &amp; time — Bangkok ICT <b>*</b></span><input name="start_at" id="startAt" type="datetime-local" required></label><div class="form-field"><span>Calculated end — Bangkok ICT</span><div class="end-display" id="endAt">—</div></div></div>
+          <div class="form-section-title">C / ACTIVITY AND INSTALLATION</div>
+          <div class="form-row"><label class="form-field"><span>Project / event title <b>*</b></span><input name="event_title" required maxlength="160" placeholder="Exhibition / installation / meeting"></label><label class="form-field"><span>Activity type <b>*</b></span><select name="event_type" required><option value="">Select type</option><option>Exhibition</option><option>Art installation</option><option>Workshop</option><option>Event</option><option>Filming / production</option><option>Meeting</option><option>Other</option></select></label></div>
+          <div class="form-row"><label class="form-field"><span>Estimated attendees <b>*</b></span><input name="attendees" type="number" min="1" max="100000" step="1" required placeholder="Number of people"></label><label class="form-field"><span>Installation / equipment requirement</span><input name="equipment" maxlength="300" placeholder="Power / structures / equipment / none"></label></div>
+          <label class="form-field"><span>Purpose and space-use description <b>*</b></span><textarea name="notes" rows="4" maxlength="3000" minlength="10" required placeholder="Describe the activity, required sections, and operational requirements."></textarea></label>
+          <label class="check-line"><input type="checkbox" name="accepted" required><span>I confirm that the information above is accurate, understand that pricing is an estimate and that submission does not confirm availability or a booking. I consent to GC processing these details to review my rental request. <b>*</b></span></label>
+          <div class="submit-foot"><div><span class="tiny-label">REQUEST PATH</span><div class="pathway">CLIENT <span>→</span> GC REVIEW <span>→</span> QUOTATION <span>→</span> CONFIRMATION</div></div><button class="action primary" type="submit" id="submitBtn">SUBMIT RENTAL REQUEST <span aria-hidden="true">↗</span></button></div>
+          <div class="feedback" id="formFeedback" role="status" aria-live="polite" hidden></div>
+          <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+        </form>
+      </section>
+    </main>
+    <footer class="footer"><span>GROUND BANGKOK / GC · REDLINE OPERATING CIRCUIT</span><span>CLIENT SUBMISSION INTERFACE · GC SECURE BRIDGE</span></footer>
+  </div>
+  <script>
+'use strict';
+(() => {
+  const $ = id => document.getElementById(id);
+  const form = $('rentalForm');
+  const hoursInput = $('durationHours');
+  const startInput = $('startAt');
+  const submitBtn = $('submitBtn');
+  const zones = new Set();
+  const rates = Object.freeze({base7:35000, installation:10000, vatPct:7});
+  // Set this to the live HTTPS address of the deployed GC backend, no trailing slash.
+  const API_BASE = window.location.origin; // Same-origin calls; no Wix iframe CORS required.
+  let connected = false;
+  let sending = false;
+  let completed = false;
+  let currentRequest = '';
+  const money = n => '฿' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const round2 = n => Math.round((n + Number.EPSILON)*100)/100;
+  const moneySigned = n => (n<0?'−':n>0?'+':'')+money(Math.abs(n));
+  const bangkok = d => new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Bangkok',year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(d);
+  const priceTotal = h => (rates.base7*h/168 + rates.installation)*(1+rates.vatPct/100);
+  function setStatus(ok){
+    connected=ok;
+    const status=$('serverState');
+    status.classList.toggle('on',ok);
+    status.classList.toggle('off',!ok);
+    status.innerHTML='<i></i> '+(ok?'GC SUBMISSION CONNECTED':'GC CONNECTION UNAVAILABLE — CHECK SERVER');
+    submitBtn.disabled=sending || completed; // Connection errors must not make this button unclickable.
+  }
+  function hours(){return Number(hoursInput.value);}
+  function showEnd(){
+    const h=hours(),v=startInput.value;
+    if(!v || !Number.isInteger(h)||h<1||h>8760){$('endAt').textContent='—';return;}
+    const dt=new Date(v+':00+07:00');
+    $('endAt').textContent=Number.isNaN(dt.getTime())?'—':bangkok(new Date(dt.getTime()+h*3600000));
+  }
+  function render(){
+    const h=hours();
+    $('daysOut').textContent=Number.isFinite(h)?(h/24).toFixed(2):'—';
+    $('basisOut').textContent=money(rates.base7);
+    $('perHourOut').textContent=money(round2(rates.base7/168));
+    $('vatPctOut').textContent=rates.vatPct;
+    document.querySelectorAll('[data-hours]').forEach(btn=>btn.classList.toggle('active',Number(btn.dataset.hours)===h));
+    if(!Number.isInteger(h)||h<1||h>8760){
+      ['rentalOut','vatOut','totalOut','differenceOut'].forEach(id=>$(id).textContent='—');
+      $('setupOut').textContent=money(rates.installation);
+      showEnd();return;
+    }
+    const rental=rates.base7*h/168, subtotal=rental+rates.installation;
+    $('rentalOut').textContent=money(round2(rental));
+    $('setupOut').textContent=money(rates.installation);
+    $('vatOut').textContent=money(round2(subtotal*rates.vatPct/100));
+    $('totalOut').textContent=money(round2(priceTotal(h)));
+    $('differenceOut').textContent=moneySigned(round2(priceTotal(h)-priceTotal(168)));
+    showEnd();
+  }
+  function tomorrow10Bangkok(){
+    const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Bangkok',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+    const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));
+    return new Date(Date.UTC(Number(p.year),Number(p.month)-1,Number(p.day)+1,10)).toISOString().slice(0,16);
+  }
+  function touched(){if(completed){completed=false;setStatus(connected);}}
+  function feedback(message,good){const el=$('formFeedback');el.hidden=false;el.classList.toggle('good',!!good);el.textContent=message;}
+  document.querySelectorAll('[data-hours]').forEach(btn=>btn.addEventListener('click',()=>{hoursInput.value=btn.dataset.hours;touched();render();}));
+  hoursInput.addEventListener('input',()=>{touched();render();});
+  startInput.addEventListener('change',()=>{touched();showEnd();});
+  form.addEventListener('input',touched);
+  document.querySelectorAll('.zone').forEach(btn=>btn.addEventListener('click',()=>{
+    const zone=btn.dataset.zone;
+    if(zones.has(zone))zones.delete(zone);else zones.add(zone);
+    btn.setAttribute('aria-pressed',String(zones.has(zone)));
+    $('selectedZoneText').textContent=zones.size?Array.from(zones).join(' + '):'NO ZONES SELECTED';
+    touched();
+  }));
+  // This interface is a self-contained Wix Harmony HTML embed.
+  // It communicates with a separate HTTPS server; no Wix administrator token
+  // or OAuth secret is ever included in browser code.
+  async function checkConnection(){
+    const configured=API_BASE.startsWith('https://') && !API_BASE.includes('REPLACE-WITH-');
+    if(!configured){setStatus(false);return;}
+    try {
+      const r=await fetch(API_BASE+'/health',{method:'GET',mode:'cors',cache:'no-store',signal:AbortSignal.timeout(90000)});
+      const data=await r.json();
+      setStatus(r.ok && data.collection==='GCRentalRequest' && data.credentialConfigured && data.originsConfigured);
+    }catch(_){setStatus(false);}
+  }
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    $('formFeedback').hidden=true;
+    if(sending)return;
+    if(!hoursInput.reportValidity()||!form.reportValidity())return;
+    const h=hours();
+    if(!Number.isInteger(h)||h<1||h>8760){feedback('Duration must be a whole number of hours between 1 and 8,760.',false);return;}
+    if(!zones.size){feedback('Select at least one floorplan zone.',false);return;}
+    const start=new Date(startInput.value+':00+07:00');
+    if(Number.isNaN(start.getTime())||start.getTime()<=Date.now()){feedback('Choose a future start date/time in Bangkok ICT.',false);return;}
+    if(!connected){feedback('GC submission server is unavailable. Your request has not been submitted. Check https://ground-bangkok-gc-rental.onrender.com/health and retry after the backend is ready.',false);return;}
+    const data=new FormData(form);
+    const payload={
+      applicant_name:String(data.get('applicant_name')||'').trim(),
+      organization:String(data.get('organization')||'').trim(),
+      email:String(data.get('email')||'').trim(),phone:String(data.get('phone')||'').trim(),
+      start_at:String(data.get('start_at')||''), duration_hours:h,zones:[...zones],
+      event_title:String(data.get('event_title')||'').trim(),event_type:String(data.get('event_type')||'').trim(),
+      attendees:Number(data.get('attendees')),equipment:String(data.get('equipment')||'').trim(),
+      notes:String(data.get('notes')||'').trim(),accepted:data.get('accepted')==='on',
+      website:String(data.get('website')||'')
+    };
+    const requestId=crypto.randomUUID();
+    currentRequest=requestId;
+    sending=true;submitBtn.disabled=true;submitBtn.textContent='SUBMITTING…';
+    try {
+      const result=await fetch(API_BASE+'/api/rental',{
+        method:'POST',mode:'cors',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({requestId,payload}),signal:AbortSignal.timeout(90000)
+      });
+      const response=await result.json();
+      if(!result.ok || !response.ok){throw new Error(response.error||'GC request rejected');}
+      completed=true;
+      feedback('REQUEST RECEIVED — '+response.id+'\nStatus: NEW\nRecorded estimate: '+money(Number(response.total))+'\nGC must review this request. This is not a confirmed booking or payment.',true);
+    }catch(e){
+      completed=false;
+      feedback('No confirmed GC receipt. Your request may or may not have been stored. Check with GC before sending another. '+String(e.message||''),false);
+    }finally{
+      sending=false;currentRequest='';submitBtn.textContent='SUBMIT RENTAL REQUEST ↗';
+      setStatus(connected);
+      $('formFeedback').scrollIntoView({behavior:'smooth',block:'center'});
+    }
+  });
+  startInput.value=tomorrow10Bangkok();
+  render();setStatus(false);
+  checkConnection();
+})();
+
+</script>
+</body>
+</html>

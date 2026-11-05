@@ -3,6 +3,8 @@
 // Private credentials are read ONLY from environment variables.
 const http = require('node:http');
 const crypto = require('node:crypto');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const PORT = Number(process.env.PORT || 8877);
 const CLIENT_ID = process.env.WIX_CLIENT_ID || '';
@@ -107,8 +109,14 @@ function rateLimited(req){
 }
 const server=http.createServer(async(req,res)=>{
   const origin=req.headers.origin;
-  if(req.url==='/health' && req.method==='GET')return send(res,200,{status:'configured',collection:COLLECTION,credentialConfigured:!!CLIENT_ID&&!!CLIENT_SECRET,originsConfigured:ALLOWED_ORIGINS.length>0},origin);
-  if(req.url!=='/api/rental')return send(res,404,{error:'Not found'},origin);
+  const pathname = new URL(req.url, 'http://localhost').pathname;
+  if((pathname === '/' || pathname === '/rental') && req.method === 'GET'){
+    res.writeHead(200,{ 'Content-Type':'text/html; charset=utf-8', 'Cache-Control':'no-store', 'X-Content-Type-Options':'nosniff' });
+    res.end(fs.readFileSync(path.join(__dirname,'index.html')));
+    return;
+  }
+  if(pathname==='/health' && req.method==='GET')return send(res,200,{status:'configured',collection:COLLECTION,credentialConfigured:!!CLIENT_ID&&!!CLIENT_SECRET,originsConfigured:ALLOWED_ORIGINS.length>0},origin);
+  if(pathname!=='/api/rental')return send(res,404,{error:'Not found'},origin);
   if(!allowed(req))return send(res,403,{error:'Origin not authorized'},origin);
   if(req.method==='OPTIONS')return send(res,204,{},origin);
   if(req.method!=='POST')return send(res,405,{error:'Method not allowed'},origin);
