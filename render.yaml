@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ground-bangkok-gc-rental
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm test
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: WIX_CLIENT_ID
+        value: "995f4985-5669-4598-8d40-0dda3f1696bb"
+      - key: WIX_CLIENT_SECRET
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
