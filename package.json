@@ -1,1 +1,13 @@
-{"name":"gc-rental-secure-bridge","version":"1.0.0","private":true,"description":"Ground Bangkok GC rental CMS submission endpoint","engines":{"node":">=20"},"scripts":{"start":"node server.js","test":"node --test server.test.js"}}
+{
+  "name": "gc-rental-secure-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ground Bangkok GC rental CMS submission endpoint",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test server.test.js package-api.test.js"
+  }
+}

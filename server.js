@@ -6,6 +6,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 
+const { handlePackages } = require('./package-api');
 const PORT = Number(process.env.PORT || 8877);
 const CLIENT_ID = process.env.WIX_CLIENT_ID || '';
 const CLIENT_SECRET = process.env.WIX_CLIENT_SECRET || '';
@@ -350,6 +351,26 @@ const server = http.createServer(async (req, res) => {
       credentialConfigured: !!CLIENT_ID && !!CLIENT_SECRET,
       originsConfigured: ALLOWED_ORIGINS.length > 0
     }, origin);
+  }
+
+  // GC ONNESIS package selector, hosted on Render and embedded into Wix by URL.
+  if (pathname === '/packages' && req.method === 'GET') {
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'Content-Security-Policy': "frame-ancestors 'self' https://www.groundbangkok.com https://groundbangkok.com"
+    });
+    res.end(fs.readFileSync(path.join(__dirname, 'package.html')));
+    return;
+  }
+  if (pathname === '/api/packages') {
+    return handlePackages(req, res, {
+      send,
+      getToken,
+      publicOrigin: process.env.PACKAGE_PUBLIC_ORIGIN || 'https://ground-bangkok-gc-rental.onrender.com',
+      credentialsReady: !!CLIENT_ID && !!CLIENT_SECRET
+    });
   }
 
   // Submission route
