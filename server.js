@@ -359,7 +359,7 @@ const server = http.createServer(async (req, res) => {
       'Content-Type': 'text/html; charset=utf-8',
       'Cache-Control': 'no-store',
       'X-Content-Type-Options': 'nosniff',
-      'Content-Security-Policy': "frame-ancestors 'self' https://www.groundbangkok.com https://groundbangkok.com"
+      'Content-Security-Policy': "frame-ancestors 'self' https://www.groundbangkok.com https://groundbangkok.com https://www.wix.com https://*.wix.com https://*.wixsite.com https://*.wixstatic.com https://*.parastorage.com"
     });
     res.end(fs.readFileSync(path.join(__dirname, 'package.html')));
     return;
